@@ -13,7 +13,7 @@
 
 import-module activedirectory
 #set domain server
-$domain = "global.centralorg.net"
+$domain = Read-host "FQDN of OU?"
 #Create empty array for groups not added to user
 $not_added = @()
 #Create empty array for groups not added to user after second attempt
