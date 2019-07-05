@@ -1,4 +1,9 @@
-﻿#Create Excel application
+# The purpose of the script is to extract all users
+# from defined AD-groups and list them in an Excel document
+# 
+# Created by Stefan Larsen from Arla IT Service Desk
+
+#Create Excel application
 $excel = New-Object -ComObject excel.application
 #Makes Excel visible
 $excel.Application.Visible = $true
@@ -15,7 +20,7 @@ $sheet.Activate() | Out-Null
 $row = 1
 $column = 1
 #Set domain name
-$domain = "global.centralorg.net"
+$domain = Read-host "insert FQDN of OU"
 $initialcolumn= 1
 # Create initial row
 $initialRow = 1
