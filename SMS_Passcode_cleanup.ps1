@@ -1,8 +1,13 @@
-﻿import-module activedirectory
+# The purpose of the script is to remove
+# users in a list from an AD-group
+#
+# Created by Stefan Larsen from Arla IT Service Desk
+import-module activedirectory
 #Set domain
-$domain = "global.centralorg.net"
+$domain = Read-host "Insert FQDN"
 #File containing users to remove
-$users = import-csv C:\users\sflas.GLOBAL\Desktop\SMS_Passcode_cleaup.csv
+$path = Read-host "path to .csv file to cleanup?"
+$users = import-csv $path
 #Create array for not removed users
 $not_removed = @()
 
